@@ -1,0 +1,275 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+body{
+	font-family: "Quicksand",sans-serif;
+}
+/*header start*/
+header{
+	height:100%;
+}
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+.primary-text{
+   color: #DAA520;
+}
+//عن about
+.container{
+	background-color:#DAA520;
+	max-width:1100px;
+	margin:auto;
+}
+.btn{
+	display:inline-block;
+	padding: 15px 30px;
+	border: none;
+	border-radius:15px;
+}
+.btn-primary{
+	color:black;
+	border: 2px solid black;
+}
+.btn-primary:hover{
+	background: #DAA520;
+}
+#navbar{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #DAA520;
+}
+#navbar img{
+	border-radius:50%;
+	width: 120px;
+	margin-left: 100px;
+}
+#navbar ul{
+	display:flex;
+	margin-right: 100px;
+	padding:0;
+}
+#navbar ul li a{
+	padding:15px 20px;
+	color: #fff;
+	font-weight: 600;
+}
+#navbar ul li a:hover{
+	border-bottom: 3px solid #8B4513;
+}
+header .content{
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	//background-color: #F0E68C;
+	height: 75%;
+
+}
+header .content h1{
+	font-size:40px;
+}
+header .content p{
+	margin:20px 0;
+}
+#about {
+	height:80%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	background: white;
+}
+#about .title{
+	text-align:center;
+	margin-bottom:4rem;
+}
+#about h2{
+	background:#DAA520;
+	font-size:40px;
+	color:#fff;
+	margin-bottom:20px;
+}
+#about .title p {
+	font-size:15px;
+	font-weight:600;
+}
+#about .about-content{
+	display:flex;
+	justify-content:space-between;
+}
+#about .about-content img{
+	width:450px;
+	
+}
+#about .about-content p{
+	margin-right:10rem;//ببعد الصورة عن الفقرة
+	font-weight:500;
+	line-height:1.6;
+}
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: auto;
+	background: #DAA520;
+	color: white;// هون يمكن نغيرها لاسود
+	
+}
+/*styling the table with its cells*/
+table, th, td {
+    border: 2px solid white;
+}
+th, td {
+    padding: 8px;
+    text-align: center;
+}
+/*styling the button and put it in the center*/
+button {
+    padding: 10px 40px;
+    background-color: #DAA520;
+    color: white;
+    border: none;
+	display: block; 
+    margin: auto;
+}
+/*styling the input text where "amount"*/
+input[type="text"] {
+    width: 50px;
+}
+/*styling the image in the table and put them in the center */
+table img {
+    display: block; 
+	margin: auto;
+	width:80px ;
+	border-radius:50%;
+}
+#menu h2{
+	background:#DAA520;
+	font-size:40px;
+	color:#fff;
+	margin-bottom:20px;
+	text-align:center;
+}
+#gallery h2{
+	background:#DAA520;
+	font-size:40px;
+	color:#fff;
+	margin-bottom:20px;
+	text-align:center;
+}
+#gallery .img-gallery img{
+	margin-bottom:center;
+	width:280px ;
+	height:200px;
+	border-radius:15px;
+	margin:30px;
+}
+////
+#contact {
+  background: #f4f2ed;
+  padding: 5rem 0;
+}
+
+#contact .container {
+  max-width: 900px;
+}
+
+#contact .contact-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#contact .contact-info {
+  width: 50%;
+}
+
+#contact .contact-info div {
+  margin: 30px 0;
+  line-height: 1.7;
+}
+
+#contact .contact-info h3 {
+  font-size: 28px;
+  color: #383848;
+  margin-bottom: 10px;
+}
+
+#contact .contact-info p {
+  color: #9a9a9a;
+}
+
+#contact .contact-info p i {
+  color: #e4b95b;
+  margin-right: 5px;
+}
+
+#contact .contact-info a i {
+  color: #fff;
+  background: #383848;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 50%;
+}
+
+#contact .contact-info a i:hover {
+  background-color: #e4b95b;
+  color: #383848;
+}
+form {
+  width: 50%;
+}
+
+form input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 20px 15px;
+  margin: 20px 0;
+  border: none;
+  background-color: #e3e2dd;
+}
+
+form input:focus,
+textarea:focus {
+  outline: none;
+}
+
+form button {
+  color: #fff;
+}
+form {
+    max-width: 400px; /* Set the maximum width of the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px; /* Add some padding around the form */
+    border: 1px solid #ccc; /* Add a border around the form */
+    border-radius: 10px; /* Add some border-radius to make the corners rounded */
+    background-color: #f9f9f9; /* Set a background color for the form */
+	text-align:left;
+	
+}
+
+/* Style for form inputs */
+input[type="text"],
+input[type="tel"],
+textarea {
+    width: 50%; /* Set the width of the inputs to 100% */
+    padding: 10px; /* Add some padding to the inputs */
+    margin-bottom: 10px; /* Add some margin between inputs */
+    border: 1px solid #ccc; /* Add a border around the inputs */
+    border-radius: 5px; /* Add some border-radius to make the corners rounded */
+    box-sizing: border-box; /* Ensure that padding and border are included in the width */
+}
+
+/* Style for the submit button */
+button {
+    padding: 10px 50px; /* Add some padding to the button */
+    border: none; /* Remove the border from the button */
+    border-radius: 5px; /* Add some border-radius to make the corners rounded */
+    background-color: #DAA520; /* Set a background color for the button */
+    color: white; /* Set the text color to white */
+}

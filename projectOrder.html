@@ -1,0 +1,61 @@
+<html>
+   <head> <title>Order</title>
+          <script src="hw1.js"></script> <!-- file of java script -->
+		  <script src="hw2.js"></script>
+          <script src="class.js"></script>
+		   <link rel="stylesheet" href="style_project.css">
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          <!-- Favicon -->
+          <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+   </head>
+   <body> 
+   <header>
+	     <div id="navbar">
+		    <img src="logo.jpg" alt="La Stella Resturant">
+			<nav>
+			  <ul>
+			  <li><a href="project.html">Home</a></li> 
+			  <ul> <li><a href="#contact">Contact</a></li>
+			  </ul>
+			 </nav>
+		 </div></br></br>
+		 <form>
+           <h3>First Name</h3><input type="text" name="fName" id="fname" placeholder="First Name" required></br>
+		   <h3>Last Name</h3><input type="text" name="lName" id="lname" placeholder="Last Name" required></br>
+           <h3>Phone number</h3><input type="tel" name="phone number" id="phoneNumber" placeholder="Phone Number" required></br>
+           <h3>Note</h3><textarea name="message" id="msg" cols="30" rows="5" placeholder="Note"></textarea></br></br>
+		   
+		     <audio id="audioPlayer" autoplay> 
+			 <source src="done.ogg" type="audio/ogg">
+			 <source src="done.mp3" type="audio/mpeg">
+              </audio>
+			  
+           <button type="button" info="order" onclick="verifyData()"><h2>Book Table</h2></button>
+           </form>
+    </header>
+		   <Section id="contact">
+			   <div class="container">
+			    <div class="contact-content">
+				 <div class="contact-info">
+                        <div>
+                            <h3>ADDRESS</h3>
+                            <p><i class="fa-solid fa-location-dot"></i> Kafar Manda </p>
+                            <p><i class="fa-solid fa-phone"></i> Phone: 052-800-5097</p>
+                        </div>
+                        <div>
+                            <h3>WORKING HOURS</h3>
+                            <p>11:00 am to 11:00 pm everyday</p>
+                        </div>
+                        <div>
+                            <h3>FOLLOW US</h3>
+                            <a href="https://www.facebook.com/LaStella.RC/?locale=he_IL"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/la.stella.resturant/"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+				</div>
+			   </div>
+			   </Section>
+   </body>
+</html>

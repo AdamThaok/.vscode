@@ -1,0 +1,160 @@
+<html>
+    <head> 
+	     <title>La Stella</title> <!-- This is the title of the website -->
+		 <link rel="stylesheet" href="style_project.css">
+
+		  <!-- Fontawsome -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          <!-- Favicon -->
+          <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+		  	<script  src="hw1.js"></script> <!-- This is the file of java script -->
+		 <script src="hw2.js"></script>
+		 <script src="class.js"></script>
+	</head>
+
+	<body>
+	   <!--header start -->
+	   <header>
+	     <div id="navbar">
+		    <img src="logo.jpg" alt="La Stella Resturant">
+			<nav>
+			  <ul>
+			  <li><a href="project.html">Home</a></li> 
+			   <li><a href="#about">About</a></li> 
+			   <li><a href="#menu">Menu</a></li> 
+			   <li><a href="#gallery">Gallery</a></li> 
+			  <ul> <li><a href="#contact">Contact</a></li>
+			  </ul>
+			 </nav>
+		 </div>
+		 <div class="content">
+		      <audio controls autoplay >
+                  <source src="main.ogg" type="audio/ogg">
+                  <source src="main.mp3" type="audio/mpeg">
+              </audio>
+		     <h1>Welcome To <span class="primary-text">La Stella</span> Resturant</h1>
+			 <p><b>Here you can find Most delicacies food in the world</b></p></br></br>
+			 <!--<a href="#" class="btn btn-primary" >Book a Table</a>-->
+			 <video width="1300" height="300" controls autoplay>
+                  <source src="video.MP4" type="video/mp4">
+				  <source src="video.ogg" type="video/ogg">
+             </video>
+		 </div>
+		</header>
+		<!--header end -->
+		</br></br></br>
+		<main>
+		 <!--About start -->
+		    <section id="about">
+			   <div class="container">
+			     <div class="title">
+			       <h2>La Stella history</h2>
+				   <p><b>More than 4+ years of experience</b></p>
+			     </div>
+			   <div class="about-content"> 
+			    <div> 
+				  <p><b> ‏Welcome to La Stella restaurant where culinary innovation meets global inspiration.
+				     Our restaurant is a celebration of diverse flavors, blending traditional recipes with modern twists.
+					 From farm-fresh ingredients to creative dishes, we invite you to join us on a culinary journey like no other.
+                     We will make sure you are served the most authentic and fresh dishes, while offering the best customer service.
+					 Our kitchen is committed to providing our guests with the best Cuisine.</b> </p>
+				  </div>
+				  <img src="about.jpg" alt="La Stella">
+			   </div>
+			   </div>
+			</section>
+			<!--About end -->
+			<!--minu start-->
+			</br></br>
+			<section id="gallery">
+            <div class="container">
+                <h2>Our Food & Restaurant Gallery</h2>
+                <div class="img-gallery">
+                    <img src="gallery1.jpg" alt="gallery1">
+                    <img src="gallery2.jpg" alt="gallery2">
+                    <img src="gallery3.jpg" alt="gallery3">
+                    <img src="gallery4.jpg" alt="gallery4">
+                    <img src="gallery5.jpg" alt="gallery5">
+                    <img src="gallery6.jpg" alt="gallery6">
+					<img src="gallery7.jpg" alt="gallery7">
+					<img src="gallery8.jpg" alt="gallery8">
+					<img src="gallery9.jpg" alt="gallery9">
+					<img src="gallery10.jpg" alt="gallery10">
+					<video width="280" height="200"controls >
+                  <source src="gallery11.MP4" type="video/mp4">
+				  <source src="gallery11.ogg" type="video/ogg">
+				  </video>
+				  <video width="280" height="200"controls autoplay >
+                  <source src="gallery12.MP4" type="video/mp4">
+				  <source src="gallery12.ogg" type="video/ogg">
+             </video>
+                </div>
+            </div>
+        </section>
+        <!-- Gallary Section End -->
+		</br></br>
+			<section id="menu">
+			   <div class="container">
+			      <div class="title">
+                     <h2>Our Special Menu</h2>
+                  </div>
+				  
+				     <table>
+		    <tr><th><h3>Meal/Salad</h3></th><th><h3>Image</h3></th><th><h3>Price</h3></th><th><h3>Select</h3></th><th><h3>Amount</h3></th></tr>
+			<tr><td><h3>Oven baked salmon</h3></td><td><img src="food1.jpg"></td>
+			<td><h3>90 NIS</h3></td><td><input type="checkbox" id="food1" value="Oven baked salmon"></td><td><input type="text" id="food1_q" name="food1_q" value="1"></tr>
+			<tr><td><h3>Veal fillet</h3></td><td><img src="food2.jpg">
+			</td><td><h3>120 NIS</h3></td><td><input type="checkbox" id="food2" value="Veal fillet"></td><td><input type="text" id="food2_q" name="food2_q" value="1"></tr>
+			<tr><td><h3>Steak entrecote</h3></td><td><img src="food3.jpg">
+			</td><td><h3>125 NIS</h3></td><td><input type="checkbox" id="food3" value="Steak entrecote"></td><td><input type="text" id="food3_q" name="food3_q" value="1"></tr>
+			<tr><td><h3>Fried shurmus</h3></td><td><img src="food4.jpg">
+			</td><td><h3>85 NIS</h3></td><td><input type="checkbox" id="food4" value="Fried shurmus"></td><td><input type="text" id="food4_q" name="food4_q" value="1"></tr>
+			<tr><td><h3>Cooked calamari shurmus</h3></td><td><img src="food5.jpg">
+			</td><td><h3>90 NIS</h3></td><td><input type="checkbox" id="food5" value="Cooked calamari shurmus"></td><td><input type="text" id="food5_q" name="food5_q" value="1"></tr>
+			<tr><td><h3>Fattoush</h3></td><td><img src="salad1.jpg"></td>
+			<td><h3>60 NIS</h3></td><td><input type="checkbox" id="food6" value="Fattoush"></td><td><input type="text" id="food6_q" name="food6_q" value="1"></tr>
+			<tr><td><h3>One million</h3></td><td><img src="Salad2.jpg">
+			</td><td><h3>55 NIS</h3></td><td><input type="checkbox" id="food7" value="One million"></td><td><input type="text" id="food7_q" name="food7_q" value="1"></tr>
+			<tr><td><h3>Watercress</h3></td><td><img src="salad3.jpg">
+			</td><td><h3>65 NIS</h3></td><td><input type="checkbox" id="food8" value="Watercress"></td><td><input type="text" id="food8_q" name="food8_q" value="1"></tr>
+			<tr><td><h3>Tabouleh</h3></td><td><img src="salad4.jpg">
+			</td><td><h3>45 NIS</h3></td><td><input type="checkbox" id="food9" value="Tabouleh"></td><td><input type="text" id="food9_q" name="food9_q" value="1"></tr>
+			<tr><td><h3>White cabbage</h3></td><td><img src="salad5.jpg">
+			</td><td><h3>50 NIS</h3></td><td><input type="checkbox" id="food10" value="White cabbage"></td><td><input type="text" id="food10_q" name="food10_q" value="1"></tr>
+		  </table>
+		  </br></br>
+		  <button type="button" onclick="verifyOrder()"><h3>order</h3></button> <!-- here we used the button and called the function from js file to check that the user has ordered something -->
+			   </div>
+			</section>
+			</br></br>
+			<!--contact start-->
+			<Section id="contact">
+			   <div class="container">
+			    <div class="contact-content">
+				 <div class="contact-info">
+                        <div>
+                            <h3>ADDRESS</h3>
+                            <p><i class="fa-solid fa-location-dot"></i> Kafar Manda </p> 
+                            <p><i class="fa-solid fa-phone"></i> Phone: 052-800-5097</p>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3353.4227173755!2d35.252975775461216!3d32.80756287365089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c4bb1d4b326cf%3A0xc91cbda436d838b7!2z157Xodei15PXqiDXnNeQINeh15jXmdec15Q!5e0!3m2!1sen!2sil!4v1708991730454!5m2!1sen!2sil" width="140" height="90" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div>
+                            <h3>WORKING HOURS</h3>
+                            <p>11:00 am to 11:00 pm everyday</p>
+                        </div>
+                        <div>
+                            <h3>FOLLOW US</h3>
+                            <a href="https://www.facebook.com/LaStella.RC/?locale=he_IL"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/la.stella.resturant/"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+				</div>
+			   </div>
+			   </Section>
+			<!--contact end-->
+			<!--minu end-->
+		</main>
+	</body>
+</html>
