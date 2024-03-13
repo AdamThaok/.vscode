@@ -102,7 +102,7 @@ function make_receipt(sum, food_name_list) {
       quantity.push(meal_list[i].quantity) //local array
     }
   }
-  gellp
+
   receipt.items = order
   receipt.quantity = quantity
   receipt.prices = sum
