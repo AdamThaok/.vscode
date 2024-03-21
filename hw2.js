@@ -108,3 +108,4 @@ function make_receipt(sum, food_name_list) {
   receipt.prices = sum
   localStorage.setItem("order", JSON.stringify(receipt))
 }
+kjhk
