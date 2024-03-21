@@ -1,6 +1,5 @@
 function verifyOrder() {
-  localStorage.clear()
-
+  clear_order()
   // Foods selected
   var food1 = document.getElementById("food1").checked
   var food2 = document.getElementById("food2").checked
@@ -24,6 +23,8 @@ function verifyOrder() {
   var food8_q = document.getElementById("food8_q").value
   var food9_q = document.getElementById("food9_q").value
   var food10_q = document.getElementById("food10_q").value
+
+  const hello = [2]
 
   //alert massage when a input is invalid
   if (
@@ -63,7 +64,8 @@ function verifyOrder() {
     var orderNumber = generateRandomInt(1, 1000)
     //save order and amount in a string
 
-    var all = constructOrder()
+    var all = constructOrder(meal_list)
+
     /*
     order = all[0]
     sum = all[1]
@@ -89,11 +91,12 @@ function verifyData() {
     !LastName ||
     !phone ||
     !regex.test(FirstName) ||
-    !regex.test(FirstName) ||
+    !regex.test(LastName) ||
     !regex1.test(phone)
   ) {
     alert("please enter Valid data")
   } else {
+    save_user_info(FirstName, LastName, phone)
     // Play audio
     var audio = document.getElementById("audioPlayer")
     audio.play()
@@ -109,4 +112,36 @@ function verifyData() {
 
 function game() {
   document.location.href = "game.html"
+}
+
+function save_user_info(Fname, Lname, phone) {
+  // Retrieve the current user information from the database
+
+  const user_list = new UserList()
+
+  const userList_str = getCurrentUserInfoFromDatabase()
+  if (userList_str.length != 0) {
+    user_list.addUser(userList_str)
+  }
+  // Create a new user instance
+
+  const user = new user_info(Fname, Lname, phone)
+
+  // Add the new user to the current user list
+  user_list.addUser(user)
+  // Update the database with the updated user list
+  updateUserInfoInDatabase(user_list)
+}
+
+function getCurrentUserInfoFromDatabase() {
+  const userListString = localStorage.getItem("userList")
+  if (userListString != null) {
+    return JSON.parse(userListString)
+  } else {
+    return []
+  }
+}
+
+function updateUserInfoInDatabase(user_list) {
+  localStorage.setItem("userList", JSON.stringify(user_list)) // Access userList property
 }

@@ -11,12 +11,9 @@ function save_info() {
 }
 
 //save order and amount as a string
-function constructOrder() {
+function constructOrder(meal_list) {
   {
-    var order = ""
     var sum = 0
-    // Define an array to store your Food objects
-
     // Iterate over the foods array
     for (let i = 0; i < meal_list.length; i++) {
       if (document.getElementById(`food${i + 1}`).checked) {
@@ -29,7 +26,7 @@ function constructOrder() {
 
   // Define an array to store your Salad objects
 
-  make_receipt(sum) //
+  make_receipt(sum, meal_list) //
 }
 //this function to send the order that the user has ordered in email to the chef
 function sendGmail() {
@@ -92,7 +89,7 @@ function stringify(fname, lname, phoneNumber, msg, order) {
   return dbStr
 }
 
-function make_receipt(sum, food_name_list) {
+function make_receipt(sum, meal_list) {
   const order = []
   const quantity = []
   for (let i = 0; i < meal_list.length; i++) {
@@ -108,4 +105,7 @@ function make_receipt(sum, food_name_list) {
   receipt.prices = sum
   localStorage.setItem("order", JSON.stringify(receipt))
 }
-kjhk
+
+function clear_order() {
+  localStorage.clear()
+}
