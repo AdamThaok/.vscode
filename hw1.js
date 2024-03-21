@@ -1,5 +1,4 @@
 function verifyOrder() {
-  clear_order()
   // Foods selected
   var food1 = document.getElementById("food1").checked
   var food2 = document.getElementById("food2").checked
@@ -106,7 +105,7 @@ function verifyData() {
       sendGmail()
       // Open a new page after the delay
       window.location.href = "done.html"
-    }, 3000)
+    }, 100)
   }
 }
 
@@ -119,29 +118,39 @@ function save_user_info(Fname, Lname, phone) {
 
   const user_list = new UserList()
 
+  //for the first time
   const userList_str = getCurrentUserInfoFromDatabase()
   if (userList_str.length != 0) {
     user_list.addUser(userList_str)
   }
+
   // Create a new user instance
-
   const user = new user_info(Fname, Lname, phone)
-
+  user_info_str = JSON.stringify(user)
   // Add the new user to the current user list
   user_list.addUser(user)
   // Update the database with the updated user list
-  updateUserInfoInDatabase(user_list)
+  updateUserInfoInDatabase(userList_str, user_info_str)
 }
 
 function getCurrentUserInfoFromDatabase() {
-  const userListString = localStorage.getItem("userList")
-  if (userListString != null) {
-    return JSON.parse(userListString)
+  const inputString = localStorage.getItem("userList")
+  if (inputString != null) {
+    var prefix = '{"userList":"'
+    return inputString.startsWith(prefix)
+      ? inputString.substring(prefix.length)
+      : inputString
   } else {
     return []
   }
 }
 
-function updateUserInfoInDatabase(user_list) {
-  localStorage.setItem("userList", JSON.stringify(user_list)) // Access userList property
+function updateUserInfoInDatabase(userList_str, user_info_str) {
+  userList_str = userList_str + user_info_str
+  localStorage.setItem("userList", userList_str) // Access userList property
+}
+
+function removePrefix(inputString) {
+  var prefix = '{"userList":"'
+  return inputString.substring(prefix.length)
 }
