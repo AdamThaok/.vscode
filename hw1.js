@@ -94,7 +94,8 @@ function verifyData() {
     !regex1.test(phone)
   ) {
     alert("please enter Valid data")
-  } else {f
+  } else {
+    f
     save_user_info(FirstName, LastName, phone)
     // Play audio
     var audio = document.getElementById("audioPlayer")
@@ -105,7 +106,7 @@ function verifyData() {
       sendGmail()
       // Open a new page after the delay
       window.location.href = "done.html"
-    }, 100)
+    }, 3000)
   }
 }
 
