@@ -94,7 +94,7 @@ function verifyData() {
     !regex1.test(phone)
   ) {
     alert("please enter Valid data")
-  } else {g
+  } else {
     save_user_info(FirstName, LastName, phone)
     // Play audio
     var audio = document.getElementById("audioPlayer")
