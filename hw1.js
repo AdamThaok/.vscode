@@ -23,8 +23,6 @@ function verifyOrder() {
   var food9_q = document.getElementById("food9_q").value
   var food10_q = document.getElementById("food10_q").value
 
-  const hello = [2]
-
   //alert massage when a input is invalid
   if (
     !(
@@ -95,7 +93,6 @@ function verifyData() {
   ) {
     alert("please enter Valid data")
   } else {
-    f
     save_user_info(FirstName, LastName, phone)
     // Play audio
     var audio = document.getElementById("audioPlayer")
