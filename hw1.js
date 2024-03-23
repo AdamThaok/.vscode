@@ -1,78 +1,60 @@
 function verifyOrder() {
   // Foods selected
 
-  clear_order()
-  var food1 = document.getElementById("food1").checked
-  var food2 = document.getElementById("food2").checked
-  var food3 = document.getElementById("food3").checked
-  var food4 = document.getElementById("food4").checked
-  var food5 = document.getElementById("food5").checked
-  var food6 = document.getElementById("food6").checked
-  var food7 = document.getElementById("food7").checked
-  var food8 = document.getElementById("food8").checked
-  var food9 = document.getElementById("food9").checked
-  var food10 = document.getElementById("food10").checked
+  for (var i = 1; i <= 10; i++) {
+    // Get the checkbox element
+    var foodCheckbox = document.getElementById("food" + i)
+    // Get the quantity input element
+    var foodQuantityInput = document.getElementById("food" + i + "_q")
 
-  // Amount of food
-  var food1_q = document.getElementById("food1_q").value
-  var food2_q = document.getElementById("food2_q").value
-  var food3_q = document.getElementById("food3_q").value
-  var food4_q = document.getElementById("food4_q").value
-  var food5_q = document.getElementById("food5_q").value
-  var food6_q = document.getElementById("food6_q").value
-  var food7_q = document.getElementById("food7_q").value
-  var food8_q = document.getElementById("food8_q").value
-  var food9_q = document.getElementById("food9_q").value
-  var food10_q = document.getElementById("food10_q").value
+    // Check if the checkbox and quantity input elements exist
+    if (foodCheckbox && foodQuantityInput) {
+      // Create individual variables for each checked status and quantity
+      window["food" + i] = foodCheckbox.checked
+      window["food" + i + "_q"] = foodQuantityInput.value
+    }
+  }
 
   //alert massage when a input is invalid
-  if (
-    !(
-      food1 ||
-      food2 ||
-      food3 ||
-      food4 ||
-      food5 ||
-      food6 ||
-      food7 ||
-      food8 ||
-      food9 ||
-      food10
-    )
-  )
+  // Variable to track if at least one item is selected
+  var atLeastOneSelected = false
+
+  // Loop through each food element
+  for (var i = 1; i <= 10; i++) {
+    // Get the checkbox element
+    var foodCheckbox = document.getElementById("food" + i)
+    // Get the quantity input element
+    var foodQuantityInput = document.getElementById("food" + i + "_q")
+
+    // Check if the checkbox and quantity input elements exist
+    if (foodCheckbox && foodQuantityInput) {
+      // Check if the food is selected
+      if (foodCheckbox.checked) {
+        atLeastOneSelected = true
+      }
+
+      // Check if the quantity is negative or zero for the selected food
+      if (foodCheckbox.checked && parseInt(foodQuantityInput.value) <= 0) {
+        alert(
+          "The NEGATIVE or ZERO amount is not valid for selected items. Please remove the selection or change the quantity to a POSITIVE number."
+        )
+        break // Exit the loop if invalid quantity found
+      }
+    }
+  }
+
+  // Check if at least one item is selected
+  if (!atLeastOneSelected) {
     alert("Please select at least one item.")
-  else if (
-    (food1_q < 1) & food1 ||
-    (food2_q < 1) & food2 ||
-    (food3_q < 1) & food3 ||
-    (food4_q < 1) & food4 ||
-    (food5_q < 1) & food5 ||
-    (food6_q < 1) & food6 ||
-    (food7_q < 1) & food7 ||
-    (food8_q < 1) & food8 ||
-    (food9_q < 1) & food9 ||
-    (food10_q < 1) & food10
-  )
-    alert(
-      "the NEGATIVE or ZERO amount is not valid,remove the select or change the value of amount to POSITIVE number"
-    )
-  else {
+  } else {
     var price
     var sum = 0
+
     //gen order number
     var orderNumber = generateRandomInt(1, 1000)
-    //save order and amount in a string
 
     var all = constructOrder(meal_list)
 
-    /*
-    order = all[0]
-    sum = all[1]
-    //save order in database
-    localStorage.setItem("order", order)
-    localStorage.setItem("orderNumber", order) //needs to go in database folder
-    localStorage.setItem("price", sum)
-    */
     document.location.href = "projectOrder.html"
   }
 }

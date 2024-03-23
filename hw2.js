@@ -51,9 +51,10 @@ function sendGmail() {
     "\nDetails: " +
     order_to_print +
     "\nTotal price: " +
-    order_obj.prices
-
-  "\nNotes: " + document.getElementById("msg").value
+    order_obj.prices +
+    " NS" +
+    "\nNotes: " +
+    document.getElementById("msg").value
   // Construct the mailto link
   var mailtoLink =
     "mailto:" +
