@@ -102,7 +102,6 @@ function make_receipt(sum, meal_list) {
       quantity.push(meal_list[i].quantity) //local array
     }
   }
-
   receipt.items = order
   receipt.quantity = quantity
   receipt.prices = sum
@@ -112,13 +111,13 @@ function make_receipt(sum, meal_list) {
 function clear_order() {
   localStorage.clear()
 }
-
+//turn string to object using JS parse function
 function str_to_obj(order) {
   order_str = localStorage.getItem("order")
   order_obj = JSON.parse(order_str)
   return order_obj
 }
-
+//recive an object of order and makes it as a string that we can print in mail
 function print_inmail(order_obj) {
   var order_str = "items: "
   for (let i = 0; i < order_obj.items.length; i++) {

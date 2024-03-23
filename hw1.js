@@ -105,7 +105,7 @@ function verifyData() {
       sendGmail()
       // Open a new page after the delay
       window.location.href = "done.html"
-    }, 100)
+    }, 3000)
   }
 }
 
