@@ -125,5 +125,6 @@ function print_inmail(order_obj) {
       order_str + order_obj.items[i] + " " + order_obj.quantity[i] + ", "
   }
   order_str = order_str.slice(0, -2)
+  order_str = order_str + "."
   return order_str
 }
