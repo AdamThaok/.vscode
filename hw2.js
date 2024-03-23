@@ -119,7 +119,7 @@ function str_to_obj(order) {
 }
 //recive an object of order and makes it as a string that we can print in mail
 function print_inmail(order_obj) {
-  var order_str = "items: "
+  var order_str = ""
   for (let i = 0; i < order_obj.items.length; i++) {
     order_str =
       order_str + order_obj.items[i] + " " + order_obj.quantity[i] + ", "
