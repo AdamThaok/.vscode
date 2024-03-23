@@ -1,5 +1,7 @@
 function verifyOrder() {
   // Foods selected
+
+  clear_order()
   var food1 = document.getElementById("food1").checked
   var food2 = document.getElementById("food2").checked
   var food3 = document.getElementById("food3").checked
@@ -103,7 +105,7 @@ function verifyData() {
       sendGmail()
       // Open a new page after the delay
       window.location.href = "done.html"
-    }, 3000)
+    }, 100)
   }
 }
 

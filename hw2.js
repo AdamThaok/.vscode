@@ -33,9 +33,13 @@ function sendGmail() {
   var email = "adamm3002@gmail.com"
   var subject = "NewOrder"
   var price = localStorage.getItem("price")
-  var clean = localStorage.getItem("order")
 
+  var order_from_db = localStorage.getItem("order")
+  /*
   const order_det = clean.replace(/[{}[\]"]/g, "")
+*/
+  var order_obj = str_to_obj(order_from_db)
+  var order_to_print = print_inmail(order_obj)
 
   var body =
     "Name: " +
@@ -45,12 +49,11 @@ function sendGmail() {
     "\nPhone Number:" +
     document.getElementById("phoneNumber").value +
     "\nDetails: " +
-    order_det +
-    "\nTotal cost: " +
-    price +
-    " NS" +
-    "\nNotes: " +
-    document.getElementById("msg").value
+    order_to_print +
+    "\nTotal price: " +
+    order_obj.prices
+
+  "\nNotes: " + document.getElementById("msg").value
   // Construct the mailto link
   var mailtoLink =
     "mailto:" +
@@ -108,4 +111,20 @@ function make_receipt(sum, meal_list) {
 
 function clear_order() {
   localStorage.clear()
+}
+
+function str_to_obj(order) {
+  order_str = localStorage.getItem("order")
+  order_obj = JSON.parse(order_str)
+  return order_obj
+}
+
+function print_inmail(order_obj) {
+  var order_str = "items: "
+  for (let i = 0; i < order_obj.items.length; i++) {
+    order_str =
+      order_str + order_obj.items[i] + " " + order_obj.quantity[i] + ", "
+  }
+  order_str = order_str.slice(0, -2)
+  return order_str
 }
