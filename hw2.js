@@ -46,7 +46,7 @@ function sendGmail() {
     document.getElementById("fname").value +
     " " +
     document.getElementById("lname").value +
-    "\nPhone Number:" +
+    "\nPhone Number: " +
     document.getElementById("phoneNumber").value +
     "\nDetails: " +
     order_to_print +

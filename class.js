@@ -20,6 +20,7 @@ class Receipt {
   }
 }
 
+//singleton class to save all users info in the same object
 class UserList {
   constructor() {
     if (UserList.instance) {

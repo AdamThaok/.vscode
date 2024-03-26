@@ -1,6 +1,8 @@
 function verifyOrder() {
   // Foods selected
 
+
+
   for (var i = 1; i <= 10; i++) {
     // Get the checkbox element
     var foodCheckbox = document.getElementById("food" + i)
