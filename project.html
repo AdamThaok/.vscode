@@ -2,7 +2,6 @@
     <head> 
 	     <title>La Stella</title> <!-- This is the title of the website -->
 		 <link rel="stylesheet" href="style_project.css">
-
 		  <!-- Fontawsome -->
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -12,6 +11,11 @@
 		  	<script  src="hw1.js"></script> <!-- This is the file of java script -->
 		 <script src="hw2.js"></script>
 		 <script src="class.js"></script>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	     <script  src="booktable.js"></script>
+	     <link rel="stylesheet" href="styleTable.css">
+	     <link rel="stylesheet" href="style_project.css">
+		 
 	</head>
 
 	<body>
@@ -23,21 +27,21 @@
 			  <ul>
 			  <li><a href="project.html">Home</a></li> 
 			   <li><a href="#about">About</a></li> 
-			   <li><a href="#menu">Menu</a></li> 
+			   <li><a href="#bookTable">Reservation</a></li> 
 			   <li><a href="#gallery">Gallery</a></li> 
 			  <ul> <li><a href="#contact">Contact</a></li>
 			  </ul>
 			 </nav>
 		 </div>
-		 <div class="content">
-		      <audio controls autoplay >
+		 <div class="content">	  
+		      <audio  autoplay >
                   <source src="main.ogg" type="audio/ogg">
                   <source src="main.mp3" type="audio/mpeg">
               </audio>
 		     <h1>Welcome To <span class="primary-text">La Stella</span> Resturant</h1>
 			 <p><b>Here you can find Most delicacies food in the world</b></p></br></br>
 			 <!--<a href="#" class="btn btn-primary" >Book a Table</a>-->
-			 <video width="1300" height="300" controls autoplay>
+			 <video width="1300" height="400" controls autoplay muted loop>
                   <source src="video.MP4" type="video/mp4">
 				  <source src="video.ogg" type="video/ogg">
              </video>
@@ -86,7 +90,7 @@
                   <source src="gallery11.MP4" type="video/mp4">
 				  <source src="gallery11.ogg" type="video/ogg">
 				  </video>
-				  <video width="280" height="200"controls autoplay >
+				  <video width="280" height="200"controls >
                   <source src="gallery12.MP4" type="video/mp4">
 				  <source src="gallery12.ogg" type="video/ogg">
              </video>
@@ -95,39 +99,65 @@
         </section>
         <!-- Gallary Section End -->
 		</br></br>
-			<section id="menu">
+			<section id="bookTable">
 			   <div class="container">
 			      <div class="title">
-                     <h2>Our Special Menu</h2>
+                     <h2>Restaurant Reservation</h2>
                   </div>
-				  
-				     <table>
-		    <tr><th><h3>Meal/Salad</h3></th><th><h3>Image</h3></th><th><h3>Price</h3></th><th><h3>Select</h3></th><th><h3>Amount</h3></th></tr>
-			<tr><td><h3>Oven baked salmon</h3></td><td><img src="food1.jpg"></td>
-			<td><h3>90 NIS</h3></td><td><input type="checkbox" id="food1" value="Oven baked salmon"></td><td><input type="text" id="food1_q" name="food1_q" value="1"></tr>
-			<tr><td><h3>Veal fillet</h3></td><td><img src="food2.jpg">
-			</td><td><h3>120 NIS</h3></td><td><input type="checkbox" id="food2" value="Veal fillet"></td><td><input type="text" id="food2_q" name="food2_q" value="1"></tr>
-			<tr><td><h3>Steak entrecote</h3></td><td><img src="food3.jpg">
-			</td><td><h3>125 NIS</h3></td><td><input type="checkbox" id="food3" value="Steak entrecote"></td><td><input type="text" id="food3_q" name="food3_q" value="1"></tr>
-			<tr><td><h3>Fried shurmus</h3></td><td><img src="food4.jpg">
-			</td><td><h3>85 NIS</h3></td><td><input type="checkbox" id="food4" value="Fried shurmus"></td><td><input type="text" id="food4_q" name="food4_q" value="1"></tr>
-			<tr><td><h3>Cooked calamari shurmus</h3></td><td><img src="food5.jpg">
-			</td><td><h3>90 NIS</h3></td><td><input type="checkbox" id="food5" value="Cooked calamari shurmus"></td><td><input type="text" id="food5_q" name="food5_q" value="1"></tr>
-			<tr><td><h3>Fattoush</h3></td><td><img src="salad1.jpg"></td>
-			<td><h3>60 NIS</h3></td><td><input type="checkbox" id="food6" value="Fattoush"></td><td><input type="text" id="food6_q" name="food6_q" value="1"></tr>
-			<tr><td><h3>One million</h3></td><td><img src="Salad2.jpg">
-			</td><td><h3>55 NIS</h3></td><td><input type="checkbox" id="food7" value="One million"></td><td><input type="text" id="food7_q" name="food7_q" value="1"></tr>
-			<tr><td><h3>Watercress</h3></td><td><img src="salad3.jpg">
-			</td><td><h3>65 NIS</h3></td><td><input type="checkbox" id="food8" value="Watercress"></td><td><input type="text" id="food8_q" name="food8_q" value="1"></tr>
-			<tr><td><h3>Tabouleh</h3></td><td><img src="salad4.jpg">
-			</td><td><h3>45 NIS</h3></td><td><input type="checkbox" id="food9" value="Tabouleh"></td><td><input type="text" id="food9_q" name="food9_q" value="1"></tr>
-			<tr><td><h3>White cabbage</h3></td><td><img src="salad5.jpg">
-			</td><td><h3>50 NIS</h3></td><td><input type="checkbox" id="food10" value="White cabbage"></td><td><input type="text" id="food10_q" name="food10_q" value="1"></tr>
-		  </table>
-		  </br></br>
-		  <button type="button" onclick="verifyOrder()"><h3>order</h3></button> <!-- here we used the button and called the function from js file to check that the user has ordered something -->
-			   </div>
-			</section>
+			<!--	  <script>
+				  $(document).ready(function() {
+            $("#reservationForm").submit(function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                var name = $("#name").val();
+                var partySize = $("#partySize").val();
+                var date = $("#date").val();
+                var time = $("#time").val();
+
+                // Basic validation (more can be added)
+                if (name == "" || partySize == "" || date == "" || time == "") {
+                    alert("Please fill in all required fields.");
+                    return;
+                }
+
+                // Send AJAX request with reservation details
+                $.ajax({
+                    url: "/makeReservation",
+                    method: "POST",
+                    data: {
+                        name: name,
+                        partySize: partySize,
+                        date: date,
+                        time: time
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            alert("Reservation successful!");
+							document.location.href = "menu.html"
+                            $("#reservationForm")[0].reset(); // Clear form after successful reservation
+                        } else {
+                            alert("Sorry, reservation unavailable at that time. Please choose another slot.");
+                        }
+                    },
+                    error: function(error) {
+                        console.error("Error:", error);
+                        alert("An error occurred. Please try again later.");
+                    }
+                });
+            });
+        });</script>-->
+				  <form id="reservationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="partySize">Party Size:</label>
+        <input type="number" id="partySize" name="partySize" min="1" required><br>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required><br>
+        <br>
+        <button onclick="prepareMeal()" type="submit"><b>Make Reservation</b></button>
+    </form>
 			</br></br>
 			<!--contact start-->
 			<Section id="contact">
@@ -143,6 +173,7 @@
                         <div>
                             <h3>WORKING HOURS</h3>
                             <p>11:00 am to 11:00 pm everyday</p>
+                    	
                         </div>
                         <div>
                             <h3>FOLLOW US</h3>
@@ -156,5 +187,11 @@
 			<!--contact end-->
 			<!--minu end-->
 		</main>
+
+
+
+		<footer id="footer">
+        <center><p>Copyright &copy; 2024 All rights reserved |<b> La Stella restaurant</b></p></center>
+    </footer>
 	</body>
 </html>

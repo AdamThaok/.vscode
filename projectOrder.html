@@ -2,13 +2,23 @@
    <head> <title>Order</title>
           <script src="hw1.js"></script> <!-- file of java script -->
 		  <script src="hw2.js"></script>
-          <script src="class.js"></script>
 		   <link rel="stylesheet" href="style_project.css">
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
           <!-- Favicon -->
           <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+		   <script src="class.js"></script>
+
+ <style>
+        #printmsg {
+            margin-bottom: 50px; /* Adjust margin as needed */
+             color: rgb(162, 55, 55)
+        }
+    </style>
+
+
+
    </head>
    <body> 
    <header>
@@ -24,10 +34,11 @@
 		 <form>
            <h3>First Name</h3><input type="text" name="fName" id="fname" placeholder="First Name" required></br>
 		   <h3>Last Name</h3><input type="text" name="lName" id="lname" placeholder="Last Name" required></br>
-           <h3>Phone number</h3><input type="tel" name="phone number" id="phoneNumber" placeholder="Phone Number" required></br>
+           <h3>Phone number</h3><input type="tel" name="phone number" id="phoneNumber" placeholder="Phone Number" oninput="promptForNumber()"required></br>
+           <div id="printmsg"></div>
            <h3>Note</h3><textarea name="message" id="msg" cols="30" rows="5" placeholder="Note"></textarea></br></br>
 		   
-		     <audio id="audioPlayer" autoplay> 
+		     <audio id="audioPlayer" > 
 			 <source src="done.ogg" type="audio/ogg">
 			 <source src="done.mp3" type="audio/mpeg">
               </audio>
@@ -57,5 +68,8 @@
 				</div>
 			   </div>
 			   </Section>
+			   	<footer id="footer">
+        <center><p>Copyright &copy; 2024 All rights reserved |<b> La Stella restaurant</b></p></center>
+    </footer>
    </body>
 </html>

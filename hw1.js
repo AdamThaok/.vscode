@@ -1,8 +1,6 @@
 function verifyOrder() {
   // Foods selected
 
-
-
   for (var i = 1; i <= 10; i++) {
     // Get the checkbox element
     var foodCheckbox = document.getElementById("food" + i)
@@ -137,4 +135,43 @@ function updateUserInfoInDatabase(userList_str, user_info_str) {
 function removePrefix(inputString) {
   var prefix = '{"userList":"'
   return inputString.substring(prefix.length)
+}
+
+// Function to check if input is a 10-digit number
+function isValidNumber(input) {
+  return /^\d{10}$/.test(input)
+}
+
+// Function to prompt user for input until a 10-digit number is entered
+/*
+function promptForNumber() {
+  let input
+  do {
+    input = prompt("Please enter a 10-digit number:")
+    if (input === null) {
+      // Handle cancel button press
+      return
+    }
+    if (!isValidNumber(input)) {
+      alert("Invalid input! Please enter a 10-digit number.")
+    }
+  } while (!isValidNumber(input))
+  alert("You entered a valid 10-digit number: " + input)
+}
+*/
+// Attach event listener to input field
+
+function promptForNumber() {
+  var cur_input = document.getElementById("phoneNumber")
+  cur_input.addEventListener("input", () => {
+    if (parseInt(cur_input.value.length) != 10) {
+      document.getElementById("printmsg").innerText =
+        "*Enter a 10 digit number!*"
+
+      console.log("you didnt enter 10 digits")
+    } else {
+      document.getElementById("printmsg").innerText = ""
+      console.log("Nice")
+    }
+  })
 }
