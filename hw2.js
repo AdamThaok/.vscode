@@ -129,26 +129,3 @@ function print_inmail(order_obj) {
   order_str = order_str + "."
   return order_str
 }
-
-async function prepareMeal() {
-  const chefPool = new ChefPool()
-  try {
-    if (!chefPool.available) {
-      console.log(
-        "Chef is already busy. Please wait for the current meal to finish."
-      )
-      return // Exit early if the chef is already busy
-    }
-
-    await chefPool.assignChef() // Acquire the chef
-    console.log(`Chef is preparing the meal...`)
-
-    // Simulate meal preparation time
-    await new Promise((resolve) => setTimeout(resolve, 3000))
-    console.log(`Meal is ready.`)
-  } catch (error) {
-    console.log(error.message)
-  } finally {
-    chefPool.releaseChef() // Release the chef
-  }
-}
