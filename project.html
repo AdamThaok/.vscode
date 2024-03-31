@@ -104,48 +104,7 @@
 			      <div class="title">
                      <h2>Restaurant Reservation</h2>
                   </div>
-			<!--	  <script>
-				  $(document).ready(function() {
-            $("#reservationForm").submit(function(event) {
-                event.preventDefault(); // Prevent default form submission
 
-                var name = $("#name").val();
-                var partySize = $("#partySize").val();
-                var date = $("#date").val();
-                var time = $("#time").val();
-
-                // Basic validation (more can be added)
-                if (name == "" || partySize == "" || date == "" || time == "") {
-                    alert("Please fill in all required fields.");
-                    return;
-                }
-
-                // Send AJAX request with reservation details
-                $.ajax({
-                    url: "/makeReservation",
-                    method: "POST",
-                    data: {
-                        name: name,
-                        partySize: partySize,
-                        date: date,
-                        time: time
-                    },
-                    success: function(response) {
-                        if (response.success) {
-                            alert("Reservation successful!");
-							document.location.href = "menu.html"
-                            $("#reservationForm")[0].reset(); // Clear form after successful reservation
-                        } else {
-                            alert("Sorry, reservation unavailable at that time. Please choose another slot.");
-                        }
-                    },
-                    error: function(error) {
-                        console.error("Error:", error);
-                        alert("An error occurred. Please try again later.");
-                    }
-                });
-            });
-        });</script>-->
 				  <form id="reservationForm">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br>
@@ -156,7 +115,7 @@
         <label for="time">Time:</label>
         <input type="time" id="time" name="time" required><br>
         <br>
-        <button onclick="prepareMeal()" type="submit"><b>Make Reservation</b></button>
+        <button  type="submit"><b>Make Reservation</b></button>
     </form>
 			</br></br>
 			<!--contact start-->

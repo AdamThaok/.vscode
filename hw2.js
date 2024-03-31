@@ -129,3 +129,23 @@ function print_inmail(order_obj) {
   order_str = order_str + "."
   return order_str
 }
+
+function save_user_info(Fname, Lname, phone) {
+  // Retrieve the current user information from the database
+
+  const user_list = new UserList()
+
+  //for the first time
+  const userList_str = getCurrentUserInfoFromDatabase()
+  if (userList_str.length != 0) {
+    user_list.addUser(userList_str)
+  }
+
+  // Create a new user instance
+  const user = new user_info(Fname, Lname, phone)
+  user_info_str = JSON.stringify(user)
+  // Add the new user to the current user list
+  user_list.addUser(user)
+  // Update the database with the updated user list
+  updateUserInfoInDatabase(userList_str, user_info_str)
+}

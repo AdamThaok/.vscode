@@ -2,9 +2,9 @@ function verifyOrder() {
   // Foods selected
 
   for (var i = 1; i <= 10; i++) {
-    // Get the checkbox element
+    
     var foodCheckbox = document.getElementById("food" + i)
-    // Get the quantity input element
+   
     var foodQuantityInput = document.getElementById("food" + i + "_q")
 
     // Check if the checkbox and quantity input elements exist
@@ -58,7 +58,6 @@ function verifyOrder() {
     document.location.href = "projectOrder.html"
   }
 }
-//random number gen
 
 // check the output in page 2
 function verifyData() {
@@ -95,72 +94,7 @@ function game() {
   document.location.href = "game.html"
 }
 
-function save_user_info(Fname, Lname, phone) {
-  // Retrieve the current user information from the database
-
-  const user_list = new UserList()
-
-  //for the first time
-  const userList_str = getCurrentUserInfoFromDatabase()
-  if (userList_str.length != 0) {
-    user_list.addUser(userList_str)
-  }
-
-  // Create a new user instance
-  const user = new user_info(Fname, Lname, phone)
-  user_info_str = JSON.stringify(user)
-  // Add the new user to the current user list
-  user_list.addUser(user)
-  // Update the database with the updated user list
-  updateUserInfoInDatabase(userList_str, user_info_str)
-}
-
-function getCurrentUserInfoFromDatabase() {
-  const inputString = localStorage.getItem("userList")
-  if (inputString != null) {
-    var prefix = '{"userList":"'
-    return inputString.startsWith(prefix)
-      ? inputString.substring(prefix.length)
-      : inputString
-  } else {
-    return []
-  }
-}
-
-function updateUserInfoInDatabase(userList_str, user_info_str) {
-  userList_str = userList_str + user_info_str
-  localStorage.setItem("userList", userList_str) // Access userList property
-}
-
-function removePrefix(inputString) {
-  var prefix = '{"userList":"'
-  return inputString.substring(prefix.length)
-}
-
-// Function to check if input is a 10-digit number
-function isValidNumber(input) {
-  return /^\d{10}$/.test(input)
-}
-
 // Function to prompt user for input until a 10-digit number is entered
-/*
-function promptForNumber() {
-  let input
-  do {
-    input = prompt("Please enter a 10-digit number:")
-    if (input === null) {
-      // Handle cancel button press
-      return
-    }
-    if (!isValidNumber(input)) {
-      alert("Invalid input! Please enter a 10-digit number.")
-    }
-  } while (!isValidNumber(input))
-  alert("You entered a valid 10-digit number: " + input)
-}
-*/
-// Attach event listener to input field
-
 function promptForNumber() {
   var cur_input = document.getElementById("phoneNumber")
   cur_input.addEventListener("input", () => {
