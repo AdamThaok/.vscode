@@ -149,3 +149,20 @@ function save_user_info(Fname, Lname, phone) {
   // Update the database with the updated user list
   updateUserInfoInDatabase(userList_str, user_info_str)
 }
+
+function getCurrentUserInfoFromDatabase() {
+  const inputString = localStorage.getItem("userList")
+  if (inputString != null) {
+    var prefix = '{"userList":"'
+    return inputString.startsWith(prefix)
+      ? inputString.substring(prefix.length)
+      : inputString
+  } else {
+    return []
+  }
+}
+
+function updateUserInfoInDatabase(userList_str, user_info_str) {
+  userList_str = userList_str + user_info_str
+  localStorage.setItem("userList", userList_str) // Access userList property
+}
